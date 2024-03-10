@@ -1,26 +1,39 @@
-import css from "./TransactionHistory.module.css"; // Додайте цей імпорт
+import css from '../TransactionHistory/TransactionHistory.module.css';
 
-export const TransactionHistory = ({ items }) => {
+const TransactionHistory = ({ items }) => {
   return (
-    <table>
-      <thead>
-        <tr>
-          <th className={css.th}>Type</th>
-          <th className={css.th}>Amount</th>
-          <th className={css.th}>Currency</th>
+    <table className={css.table}>
+      <thead className={css.tableTitles}>
+        <tr className={css.tableRow}>
+          <th className={css.tableTitle}>Type</th>
+          <th className={css.tableTitle}>Amount</th>
+          <th className={css.tableTitle}>Currency</th>
         </tr>
       </thead>
-      <body>
-        {items.map(({ id, type, amount, currency }) => (
-          <tr className={css.tr} key={id}>
-            <td className={css.td}>{type}</td>
-            <td className={css.td}>{amount}</td>
-                <td className={css.td}>{currency}
-                </td>
-          </tr>
-        ))}
-      </body>
+      <tbody className={css.tableBody}>
+        {items.map(item => {
+          return (
+            <tr className={css.tableRow} key={item.id}>
+              <Transaction
+                type={item.type}
+                amount={item.amount}
+                currency={item.currency}
+              />
+            </tr>
+          );
+        })}
+      </tbody>
     </table>
+  );
+};
+
+const Transaction = ({ type, amount, currency }) => {
+  return (
+    <>
+      <td className={css.tableDescrType}>{type}</td>
+      <td className={css.tableDescr}>{amount}</td>
+      <td className={css.tableDescr}>{currency}</td>
+    </>
   );
 };
 
