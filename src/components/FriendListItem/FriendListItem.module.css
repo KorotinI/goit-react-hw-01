@@ -13,10 +13,10 @@
     margin-bottom: 12px;
 }
 
-.userActive {
+.userOnline {
     color: green;
 }
 
-.userUnactive {
+.userOffline {
     color: red;
 }

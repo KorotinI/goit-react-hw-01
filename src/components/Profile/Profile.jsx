@@ -1,10 +1,10 @@
 import css from "./Profile.module.css";
 
-export const Profile = ({ image, username, tag, location,  stats }) => {
+export const Profile = ({ avatar, username, tag, location,  stats }) => {
   return (
     <div className={css.card}>
       <div className={css.cardCont}>
-        <img className={css.cardImage} src={image} width={260} alt="" />
+        <img className={css.cardImg} src={avatar} width={260} alt="" />
         <p className={css.cardName}>{username}</p>
         <p className={css.cardTag}>{tag}</p>
         <p className={css.cardLocation}>{location}</p>

@@ -15,13 +15,13 @@ table {
 
 .th {
     background-color: #0ab1c7e0;
-    color: rgb(181, 35, 35);
+    color: rgb(159, 11, 11);
     font-weight: bold;
     border: 1px solid black;
 }
 
 .tr:nth-child(even) {
-    background-color: #45e71c;
+    background-color: #287c5d;
 }
 
 .td {
